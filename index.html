@@ -1,0 +1,582 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chesterverse</title>
+
+<style>
+
+/* ==============================
+   CONFIGURACIÓN GENERAL
+============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background:
+        radial-gradient(circle at 20% 20%, #39206b 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, #123b65 0%, transparent 30%),
+        #080612;
+}
+
+/* ==============================
+   ENCABEZADO
+============================== */
+
+header {
+    text-align: center;
+    padding: 70px 20px 50px;
+    background:
+        linear-gradient(135deg, rgba(100,40,180,0.5), rgba(10,80,130,0.4)),
+        #0d091b;
+    border-bottom: 2px solid #7546d8;
+}
+
+header h1 {
+    font-size: 64px;
+    margin: 0;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 10px #8d5cff,
+        0 0 30px #673ab7;
+}
+
+header p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 20px auto 0;
+    color: #d7caff;
+}
+
+/* ==============================
+   NAVEGACIÓN
+============================== */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    background: rgba(8,6,18,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #39246d;
+}
+
+nav button {
+    background: transparent;
+    color: white;
+    border: 1px solid #6943bb;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    background: #6943bb;
+    box-shadow: 0 0 15px #6943bb;
+}
+
+/* ==============================
+   SECCIONES
+============================== */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #c9c2dc;
+}
+
+/* ==============================
+   BUSCADOR
+============================== */
+
+.search-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#search {
+    width: 90%;
+    max-width: 600px;
+    padding: 16px 20px;
+    border-radius: 30px;
+    border: 2px solid #6741b8;
+    background: #120d20;
+    color: white;
+    font-size: 17px;
+    outline: none;
+}
+
+#search:focus {
+    box-shadow: 0 0 20px rgba(125,75,220,0.5);
+}
+
+/* ==============================
+   GALERÍA
+============================== */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* ==============================
+   TARJETAS
+============================== */
+
+.chester-card {
+    background:
+        linear-gradient(145deg, rgba(42,25,72,0.9), rgba(16,13,29,0.95));
+    border: 1px solid #51338b;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.chester-card:hover {
+    transform: translateY(-8px);
+    border-color: #9a6cff;
+    box-shadow:
+        0 10px 35px rgba(100,50,200,0.4);
+}
+
+.chester-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.chester-info {
+    padding: 20px;
+}
+
+.chester-info h3 {
+    margin-top: 0;
+    font-size: 25px;
+    color: #cbb5ff;
+}
+
+.chester-info p {
+    line-height: 1.6;
+    color: #d5d0df;
+}
+
+/* ==============================
+   FORMULARIO
+============================== */
+
+.form-container {
+    max-width: 800px;
+    margin: auto;
+    background: rgba(25,18,43,0.9);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #51338b;
+    text-align: center;
+}
+
+.form-container iframe {
+    width: 100%;
+    min-height: 700px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* ==============================
+   TEXTO SIN RESULTADOS
+============================== */
+
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    color: #aaa;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #06040d;
+    border-top: 1px solid #2e2050;
+    color: #8f879f;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    nav button {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- ==============================
+     ENCABEZADO
+============================== -->
+
+<header>
+
+    <h1>CHESTERVERSE</h1>
+
+    <p>
+        Bienvenido al archivo oficial de todas las variantes,
+        dimensiones y manifestaciones conocidas de Chester.
+        Explora el multiverso. Descubre nuevos Chesters.
+        Cuestiona la realidad.
+    </p>
+
+</header>
+
+
+<!-- ==============================
+     NAVEGACIÓN
+============================== -->
+
+<nav>
+
+    <button onclick="mostrarSeccion('galeria')">
+        🐶 Galería
+    </button>
+
+    <button onclick="mostrarSeccion('proponer')">
+        🌌 Proponer un Chester
+    </button>
+
+</nav>
+
+
+<!-- ==============================
+     GALERÍA
+============================== -->
+
+<section id="galeria" class="section">
+
+    <h2>🌌 Archivo del Chesterverse</h2>
+
+    <p class="section-intro">
+        Estos son algunos de los Chesters registrados hasta el momento.
+        Cada uno pertenece a una realidad posiblemente diferente.
+    </p>
+
+
+    <!-- BUSCADOR -->
+
+    <div class="search-container">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 Buscar un Chester..."
+            onkeyup="buscarChester()"
+        >
+
+    </div>
+
+
+    <!-- GALERÍA -->
+
+    <div class="gallery" id="gallery">
+
+
+        <!-- ==================================
+             CHESTER 001
+             COPIAR ESTE BLOQUE PARA AÑADIR MÁS
+        =================================== -->
+
+        <div class="chester-card">
+
+            <img
+                src="https://via.placeholder.com/600x600.png?text=Chester+001"
+                alt="Foto de Chester Original"
+            >
+
+            <div class="chester-info">
+
+                <h3>Chester Original</h3>
+
+                <p>
+                    El Chester que, según los registros,
+                    dio origen a todo el Chesterverse.
+                    Su existencia continúa siendo investigada
+                    por científicos especializados.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================
+             CHESTER 002
+        =================================== -->
+
+        <div class="chester-card">
+
+            <img
+                src="https://via.placeholder.com/600x600.png?text=Chester+Supremo"
+                alt="Foto de Chester Supremo"
+            >
+
+            <div class="chester-info">
+
+                <h3>Chester Supremo</h3>
+
+                <p>
+                    Una variante extremadamente poderosa.
+                    Se dice que posee conocimientos que ningún
+                    otro Chester ha logrado comprender.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================
+             CHESTER 003
+        =================================== -->
+
+        <div class="chester-card">
+
+            <img
+                src="https://via.placeholder.com/600x600.png?text=Chester+Oscuro"
+                alt="Foto de Chester Oscuro"
+            >
+
+            <div class="chester-info">
+
+                <h3>Chester Oscuro</h3>
+
+                <p>
+                    Procedente de una dimensión desconocida.
+                    Los documentos sobre este Chester fueron
+                    encontrados en circunstancias sospechosas.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="no-results" id="noResults">
+
+        No se encontró ningún Chester con ese nombre.
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     PROPONER CHESTER
+============================== -->
+
+<section id="proponer" class="section" style="display:none;">
+
+    <h2>🌌 Proponer un Chester</h2>
+
+    <p class="section-intro">
+
+        ¿Conocés una nueva variante de Chester?
+
+        Podés enviarla al archivo oficial.
+
+        Todas las propuestas serán revisadas manualmente
+        antes de ser incorporadas al Chesterverse.
+
+    </p>
+
+
+    <div class="form-container">
+
+        <!--
+
+        IMPORTANTE:
+
+        REEMPLAZÁ LA URL DE ABAJO POR LA URL
+        DEL FORMULARIO EXTERNO QUE UTILICES.
+
+        El formulario debería pedir:
+
+        1. Nombre del Chester
+        2. Foto del Chester
+        3. Descripción
+
+        -->
+
+        <iframe
+            src="https://docs.google.com/forms/d/e/TU_FORMULARIO_AQUI/viewform?embedded=true">
+        </iframe>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+    <p>
+        © 2026 Chesterverse
+    </p>
+
+    <p>
+        Una iniciativa completamente seria y científicamente comprobada.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+/* ==============================
+   CAMBIAR ENTRE SECCIONES
+============================== */
+
+function mostrarSeccion(seccion) {
+
+    document.getElementById("galeria").style.display = "none";
+
+    document.getElementById("proponer").style.display = "none";
+
+
+    document.getElementById(seccion).style.display = "block";
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* ==============================
+   BUSCADOR DE CHESTERS
+============================== */
+
+function buscarChester() {
+
+    let input =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+
+    let cards =
+        document
+        .querySelectorAll(".chester-card");
+
+
+    let encontrados = 0;
+
+
+    cards.forEach(function(card) {
+
+        let texto =
+            card.innerText.toLowerCase();
+
+
+        if (texto.includes(input)) {
+
+            card.style.display = "block";
+
+            encontrados++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    if (encontrados === 0) {
+
+        document
+        .getElementById("noResults")
+        .style.display = "block";
+
+    } else {
+
+        document
+        .getElementById("noResults")
+        .style.display = "none";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
+```
