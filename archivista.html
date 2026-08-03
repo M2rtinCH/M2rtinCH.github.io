@@ -1,0 +1,379 @@
+```html
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Panel del Archivista | Chesterverse
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        🐶 CHESTERVERSE
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">
+
+            ← Chesterverse
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<main>
+
+<section class="archivist-page">
+
+
+    <div class="section-header">
+
+        <span class="eyebrow">
+
+            ACCESO DEL ARCHIVISTA
+
+        </span>
+
+
+        <h1>
+
+            Panel del Archivista
+
+        </h1>
+
+
+        <p>
+
+            Herramienta para registrar nuevos
+            Chesters aprobados en el archivo oficial.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="archivist-layout">
+
+
+        <!-- =========================
+             FORMULARIO
+        ========================== -->
+
+
+        <div class="archivist-card">
+
+
+            <h2>
+
+                Registrar Chester
+
+            </h2>
+
+
+            <p class="helper-text">
+
+                Completá los datos del Chester
+                que hayas aprobado.
+
+            </p>
+
+
+            <label>
+
+                ID del Chester
+
+                <input
+                    type="text"
+                    id="chester-id"
+                    placeholder="CH-005"
+                >
+
+            </label>
+
+
+
+            <label>
+
+                Nombre
+
+                <input
+                    type="text"
+                    id="chester-name"
+                    placeholder="Chester Galáctico"
+                >
+
+            </label>
+
+
+
+            <label>
+
+                Universo
+
+                <input
+                    type="text"
+                    id="chester-universe"
+                    placeholder="Tierra-042"
+                >
+
+            </label>
+
+
+
+            <label>
+
+                Rareza
+
+                <select id="chester-rarity">
+
+                    <option value="Común">
+                        Común
+                    </option>
+
+                    <option value="Raro">
+                        Raro
+                    </option>
+
+                    <option value="Épico">
+                        Épico
+                    </option>
+
+                    <option value="Legendario">
+                        Legendario
+                    </option>
+
+                </select>
+
+            </label>
+
+
+
+            <label>
+
+                Estado
+
+                <select id="chester-status">
+
+                    <option value="Oficial">
+
+                        Oficial
+
+                    </option>
+
+                    <option value="Propuesto">
+
+                        Propuesto
+
+                    </option>
+
+                </select>
+
+            </label>
+
+
+
+            <label>
+
+                Imagen
+
+                <input
+                    type="text"
+                    id="chester-image"
+                    placeholder="imagenes/chester-galactico.jpg"
+                >
+
+            </label>
+
+
+
+            <label>
+
+                Descripción
+
+                <textarea
+                    id="chester-description"
+                    placeholder="Descripción del Chester..."
+                ></textarea>
+
+            </label>
+
+
+
+            <label>
+
+                Historia / Lore
+
+                <textarea
+                    id="chester-lore"
+                    placeholder="Historia del Chester..."
+                ></textarea>
+
+            </label>
+
+
+
+            <label>
+
+                Año
+
+                <input
+                    type="number"
+                    id="chester-date"
+                    value="2026"
+                >
+
+            </label>
+
+
+
+            <button
+                id="generate-button"
+                class="main-button"
+                type="button"
+            >
+
+                ⚡ Generar Chester
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             PREVISUALIZACIÓN
+        ========================== -->
+
+
+        <div class="archivist-card">
+
+
+            <h2>
+
+                Vista previa
+
+            </h2>
+
+
+            <div
+                id="preview"
+                class="chester-preview"
+            >
+
+                <div class="preview-placeholder">
+
+                    🐶
+
+                    <p>
+
+                        Completá el formulario
+                        para generar una vista previa.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h2>
+
+                JSON generado
+
+            </h2>
+
+
+            <textarea
+                id="json-output"
+                class="json-output"
+                readonly
+            ></textarea>
+
+
+            <button
+                id="copy-button"
+                class="main-button secondary-button"
+                type="button"
+            >
+
+                📋 Copiar JSON
+
+            </button>
+
+
+            <button
+                id="download-button"
+                class="main-button secondary-button"
+                type="button"
+            >
+
+                💾 Descargar JSON
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+</main>
+
+
+
+<footer>
+
+    <p>
+
+        Panel del Archivista —
+        Chesterverse
+
+    </p>
+
+</footer>
+
+
+
+<script
+    src="archivista.js"
+></script>
+
+
+</body>
+
+</html>
+```

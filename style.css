@@ -1,0 +1,1994 @@
+```css
+/* ==================================
+   CHESTERVERSE
+   ESTILOS PRINCIPALES
+================================== */
+
+
+/* ================================
+   VARIABLES
+================================ */
+
+:root {
+
+    --background: #080612;
+
+    --background-light: #110c20;
+
+    --card: rgba(25, 18, 43, 0.85);
+
+    --primary: #8d5cff;
+
+    --primary-light: #b99aff;
+
+    --secondary: #36c5ff;
+
+    --text: #ffffff;
+
+    --text-muted: #b9b1c9;
+
+    --border: rgba(141, 92, 255, 0.35);
+
+}
+
+
+/* ================================
+   RESET
+================================ */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(111, 54, 255, 0.25),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(0, 150, 255, 0.15),
+            transparent 30%
+        ),
+
+        var(--background);
+
+}
+
+
+/* ================================
+   NAVEGACIÓN
+================================ */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 5%;
+
+    background:
+        rgba(8, 6, 18, 0.8);
+
+    backdrop-filter:
+        blur(15px);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.logo {
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    font-size: 18px;
+
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.nav-links button {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--text-muted);
+
+    padding: 10px 15px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.nav-links button:hover {
+
+    color: white;
+
+    background:
+        rgba(141, 92, 255, 0.2);
+
+}
+
+
+/* ================================
+   SECCIONES
+================================ */
+
+.section {
+
+    display: none;
+
+    min-height: 100vh;
+
+    padding:
+        120px 5% 80px;
+
+}
+
+
+.section.active {
+
+    display: block;
+
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+
+    min-height:
+        calc(100vh - 100px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+.hero-content {
+
+    max-width: 800px;
+
+}
+
+
+.portal {
+
+    width: 120px;
+
+    height: 120px;
+
+    margin:
+        0 auto 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 60px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #9b6cff 20%,
+            #5424a8 45%,
+            transparent 70%
+        );
+
+    box-shadow:
+
+        0 0 30px #8d5cff,
+
+        0 0 80px
+        rgba(141, 92, 255, 0.5);
+
+    animation:
+
+        portalPulse
+        3s
+        infinite
+        ease-in-out;
+
+}
+
+
+@keyframes portalPulse {
+
+    0% {
+
+        transform:
+            scale(1)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.08)
+            rotate(180deg);
+
+    }
+
+    100% {
+
+        transform:
+            scale(1)
+            rotate(360deg);
+
+    }
+
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(45px, 10vw, 100px);
+
+    letter-spacing:
+        8px;
+
+    margin-bottom:
+        20px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #b99aff,
+            #36c5ff,
+            #ffffff
+        );
+
+    background-size:
+        300%;
+
+    -webkit-background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    animation:
+        gradientMove
+        5s
+        infinite
+        linear;
+
+}
+
+
+@keyframes gradientMove {
+
+    0% {
+
+        background-position:
+            0%;
+
+    }
+
+    100% {
+
+        background-position:
+            300%;
+
+    }
+
+}
+
+
+.subtitle {
+
+    font-size:
+        22px;
+
+    color:
+        var(--primary-light);
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.description {
+
+    max-width:
+        650px;
+
+    margin:
+        auto auto 35px;
+
+    color:
+        var(--text-muted);
+
+    line-height:
+        1.7;
+
+}
+
+
+/* ================================
+   BOTONES
+================================ */
+
+.main-button {
+
+    display:
+        inline-block;
+
+    padding:
+        15px 30px;
+
+    border:
+        none;
+
+    border-radius:
+        30px;
+
+    color:
+        white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #7546d8,
+            #3f8fff
+        );
+
+    text-decoration:
+        none;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.3s;
+
+}
+
+
+.main-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(80, 100, 255, 0.4);
+
+}
+
+
+/* ================================
+   ENCABEZADOS
+================================ */
+
+.section-header {
+
+    text-align:
+        center;
+
+    max-width:
+        700px;
+
+    margin:
+        0 auto 45px;
+
+}
+
+
+.eyebrow {
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        3px;
+
+    color:
+        var(--secondary);
+
+}
+
+
+.section-header h2 {
+
+    font-size:
+        clamp(35px, 6vw, 60px);
+
+    margin:
+        15px 0;
+
+}
+
+
+.section-header p {
+
+    color:
+        var(--text-muted);
+
+}
+
+
+/* ================================
+   BUSCADOR
+================================ */
+
+.search-box {
+
+    max-width:
+        600px;
+
+    margin:
+        0 auto 40px;
+
+}
+
+
+.search-box input {
+
+    width:
+        100%;
+
+    padding:
+        17px 22px;
+
+    border-radius:
+        30px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(20, 13, 35, 0.8);
+
+    color:
+        white;
+
+    font-size:
+        16px;
+
+    outline:
+        none;
+
+}
+
+
+.search-box input:focus {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+
+        0 0 20px
+        rgba(141, 92, 255, 0.3);
+
+}
+
+
+/* ================================
+   GALERÍA
+================================ */
+
+.chester-grid {
+
+    max-width:
+        1200px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                250px,
+                1fr
+            )
+        );
+
+    gap:
+        25px;
+
+}
+
+
+/* ================================
+   TARJETAS
+================================ */
+
+.chester-card {
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        20px;
+
+    background:
+        var(--card);
+
+    transition:
+        0.4s;
+
+    animation:
+        cardAppear
+        0.5s
+        ease;
+
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.chester-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(80, 40, 180, 0.3);
+
+}
+
+
+.chester-image {
+
+    width:
+        100%;
+
+    height:
+        280px;
+
+    object-fit:
+        cover;
+
+    display:
+        block;
+
+}
+
+
+.chester-info {
+
+    padding:
+        22px;
+
+}
+
+
+.chester-info h3 {
+
+    font-size:
+        24px;
+
+    margin-bottom:
+        10px;
+
+    color:
+        var(--primary-light);
+
+}
+
+
+.chester-info p {
+
+    color:
+        var(--text-muted);
+
+    line-height:
+        1.6;
+
+}
+
+
+/* ================================
+   SIN RESULTADOS
+================================ */
+
+.no-results {
+
+    display:
+        none;
+
+    text-align:
+        center;
+
+    padding:
+        60px 20px;
+
+}
+
+
+.no-results-icon {
+
+    font-size:
+        60px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.no-results h3 {
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.no-results p {
+
+    color:
+        var(--text-muted);
+
+}
+
+
+/* ================================
+   PROPUESTAS
+================================ */
+
+.proposal-card {
+
+    max-width:
+        700px;
+
+    margin:
+        auto;
+
+    padding:
+        50px 30px;
+
+    text-align:
+        center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        25px;
+
+    background:
+        var(--card);
+
+}
+
+
+.proposal-icon {
+
+    font-size:
+        60px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.proposal-card h3 {
+
+    font-size:
+        28px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.proposal-card p {
+
+    color:
+        var(--text-muted);
+
+    line-height:
+        1.7;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+
+    padding:
+        40px 20px;
+
+    text-align:
+        center;
+
+    border-top:
+        1px solid var(--border);
+
+    color:
+        var(--text-muted);
+
+}
+
+
+.footer-small {
+
+    margin-top:
+        10px;
+
+    font-size:
+        12px;
+
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media
+(max-width: 700px) {
+
+    .navbar {
+
+        flex-direction:
+            column;
+
+        gap:
+            10px;
+
+    }
+
+
+    .nav-links {
+
+        width:
+            100%;
+
+        justify-content:
+            center;
+
+    }
+
+
+    .section {
+
+        padding-top:
+            160px;
+
+    }
+
+
+    .hero h1 {
+
+        letter-spacing:
+            3px;
+
+    }
+
+}
+```
+```css
+/* =========================================
+   ID DEL CHESTER
+========================================= */
+
+.chester-id {
+
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: var(--secondary);
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================
+   BOTÓN VER FICHA
+========================================= */
+
+.details-button {
+
+    margin-top: 15px;
+
+    padding: 9px 16px;
+
+    border-radius: 20px;
+
+    border: 1px solid var(--border);
+
+    background: transparent;
+
+    color: var(--primary-light);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.details-button:hover {
+
+    background:
+        var(--primary);
+
+    color: white;
+
+    border-color:
+        var(--primary);
+
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.chester-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    background:
+        rgba(3, 2, 10, 0.85);
+
+    backdrop-filter:
+        blur(15px);
+
+    animation:
+        modalAppear
+        0.25s
+        ease;
+
+}
+
+
+@keyframes modalAppear {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+.chester-modal.closing {
+
+    animation:
+        modalDisappear
+        0.2s
+        ease
+        forwards;
+
+}
+
+
+@keyframes modalDisappear {
+
+    from {
+
+        opacity: 1;
+
+    }
+
+    to {
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================
+   CONTENIDO DEL MODAL
+========================================= */
+
+.chester-modal-content {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 850px;
+
+    max-height: 90vh;
+
+    overflow: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    background:
+        #100b1c;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        25px;
+
+    box-shadow:
+
+        0 30px 100px
+        rgba(0,0,0,0.6);
+
+    animation:
+        modalContentAppear
+        0.3s
+        ease;
+
+}
+
+
+@keyframes modalContentAppear {
+
+    from {
+
+        transform:
+            scale(0.9)
+            translateY(20px);
+
+    }
+
+    to {
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   IMAGEN DEL MODAL
+========================================= */
+
+.modal-image {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    min-height:
+        400px;
+
+    object-fit:
+        cover;
+
+}
+
+
+/* =========================================
+   INFORMACIÓN
+========================================= */
+
+.modal-info {
+
+    padding:
+        50px 40px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+}
+
+
+.modal-id {
+
+    color:
+        var(--secondary);
+
+    letter-spacing:
+        3px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        bold;
+
+}
+
+
+.modal-info h2 {
+
+    font-size:
+        42px;
+
+    margin:
+        10px 0 30px;
+
+}
+
+
+.modal-info p {
+
+    color:
+        var(--text-muted);
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =========================================
+   DATOS
+========================================= */
+
+.modal-data {
+
+    display:
+        flex;
+
+    gap:
+        30px;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.modal-data div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        5px;
+
+}
+
+
+.modal-data strong {
+
+    font-size:
+        11px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        2px;
+
+    color:
+        var(--text-muted);
+
+}
+
+
+.modal-data span {
+
+    color:
+        var(--primary-light);
+
+}
+
+
+/* =========================================
+   BOTÓN CERRAR
+========================================= */
+
+.close-modal {
+
+    position:
+        absolute;
+
+    top:
+        15px;
+
+    right:
+        15px;
+
+    z-index:
+        10;
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(0,0,0,0.6);
+
+    color:
+        white;
+
+    font-size:
+        25px;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.3s;
+
+}
+
+
+.close-modal:hover {
+
+    background:
+        var(--primary);
+
+    transform:
+        rotate(90deg);
+
+}
+
+
+/* =========================================
+   MODAL EN CELULAR
+========================================= */
+
+@media
+(max-width: 700px) {
+
+    .chester-modal {
+
+        padding:
+            15px;
+
+    }
+
+
+    .chester-modal-content {
+
+        grid-template-columns:
+            1fr;
+
+        max-height:
+            95vh;
+
+    }
+
+
+    .modal-image {
+
+        height:
+            300px;
+
+        min-height:
+            0;
+
+    }
+
+
+    .modal-info {
+
+        padding:
+            30px 25px;
+
+    }
+
+
+    .modal-info h2 {
+
+        font-size:
+            32px;
+
+    }
+
+}
+```
+```css id="v6u0zq"
+/* =========================================
+   FILTROS
+========================================= */
+
+.filters {
+
+    max-width:
+        1000px;
+
+    margin:
+        0 auto 40px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        15px;
+
+    flex-wrap:
+        wrap;
+
+}
+
+
+.filters select {
+
+    padding:
+        12px 18px;
+
+    border-radius:
+        25px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        #120c20;
+
+    color:
+        white;
+
+    cursor:
+        pointer;
+
+}
+
+
+.filters select:focus {
+
+    outline:
+        none;
+
+    border-color:
+        var(--primary);
+
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.chester-tags {
+
+    display:
+        flex;
+
+    gap:
+        8px;
+
+    flex-wrap:
+        wrap;
+
+    margin:
+        15px 0;
+
+}
+
+
+.chester-tags span {
+
+    font-size:
+        11px;
+
+    padding:
+        5px 10px;
+
+    border-radius:
+        15px;
+
+    background:
+        rgba(141,92,255,0.12);
+
+    color:
+        var(--primary-light);
+
+}
+
+
+/* =========================================
+   ESTADOS
+========================================= */
+
+.status-badge {
+
+    display:
+        inline-block;
+
+    padding:
+        5px 12px;
+
+    border-radius:
+        20px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+
+}
+
+
+.status-badge.oficial {
+
+    background:
+        rgba(50,200,120,0.15);
+
+    color:
+        #65e6a0;
+
+}
+
+
+.status-badge.propuesto {
+
+    background:
+        rgba(255,190,50,0.15);
+
+    color:
+        #ffd166;
+
+}
+
+
+/* =========================================
+   PÁGINA INDIVIDUAL
+========================================= */
+
+.chester-page {
+
+    min-height:
+        100vh;
+
+    padding:
+        140px 5% 80px;
+
+}
+
+
+.chester-detail {
+
+    max-width:
+        1100px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        30px;
+
+    overflow:
+        hidden;
+
+}
+
+
+.detail-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    min-height:
+        600px;
+
+    object-fit:
+        cover;
+
+}
+
+
+.detail-content {
+
+    padding:
+        60px 50px;
+
+}
+
+
+.detail-content h1 {
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            70px
+        );
+
+    margin:
+        15px 0 40px;
+
+}
+
+
+.detail-content h2 {
+
+    font-size:
+        20px;
+
+    margin:
+        30px 0 10px;
+
+}
+
+
+.detail-content p {
+
+    color:
+        var(--text-muted);
+
+    line-height:
+        1.8;
+
+}
+
+
+.detail-data {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        25px;
+
+}
+
+
+.detail-data div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        5px;
+
+}
+
+
+.detail-data strong {
+
+    font-size:
+        11px;
+
+    color:
+        var(--text-muted);
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.detail-data span {
+
+    color:
+        var(--primary-light);
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media
+(max-width: 800px) {
+
+    .chester-detail {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .detail-image img {
+
+        min-height:
+            350px;
+
+        max-height:
+            500px;
+
+    }
+
+
+    .detail-content {
+
+        padding:
+            40px 25px;
+
+    }
+
+}
+```
+```css
+/* =========================================
+   PANEL DEL ARCHIVISTA
+========================================= */
+
+.archivist-page {
+
+    min-height:
+        100vh;
+
+    padding:
+        140px 5% 80px;
+
+}
+
+
+.archivist-layout {
+
+    max-width:
+        1200px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        30px;
+
+}
+
+
+.archivist-card {
+
+    padding:
+        35px;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        25px;
+
+}
+
+
+.archivist-card h2 {
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.helper-text {
+
+    color:
+        var(--text-muted);
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.archivist-card label {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+
+    margin-bottom:
+        20px;
+
+    font-size:
+        13px;
+
+    color:
+        var(--text-muted);
+
+}
+
+
+.archivist-card input,
+.archivist-card select,
+.archivist-card textarea {
+
+    width:
+        100%;
+
+    padding:
+        13px 15px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        10px;
+
+    background:
+        #100b1c;
+
+    color:
+        white;
+
+    font-family:
+        inherit;
+
+}
+
+
+.archivist-card textarea {
+
+    min-height:
+        120px;
+
+    resize:
+        vertical;
+
+}
+
+
+.archivist-card input:focus,
+.archivist-card select:focus,
+.archivist-card textarea:focus {
+
+    outline:
+        none;
+
+    border-color:
+        var(--primary);
+
+}
+
+
+/* =========================================
+   PREVISUALIZACIÓN
+========================================= */
+
+.chester-preview {
+
+    margin:
+        25px 0;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        18px;
+
+    background:
+        #100b1c;
+
+}
+
+
+.preview-image-container {
+
+    height:
+        250px;
+
+    background:
+        #080612;
+
+}
+
+
+.preview-image {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+}
+
+
+.preview-content {
+
+    padding:
+        25px;
+
+}
+
+
+.preview-content h3 {
+
+    font-size:
+        28px;
+
+    margin:
+        10px 0;
+
+}
+
+
+.preview-content p {
+
+    color:
+        var(--text-muted);
+
+    line-height:
+        1.6;
+
+}
+
+
+.preview-content hr {
+
+    border:
+        none;
+
+    border-top:
+        1px solid var(--border);
+
+    margin:
+        25px 0;
+
+}
+
+
+/* =========================================
+   JSON
+========================================= */
+
+.json-output {
+
+    width:
+        100%;
+
+    min-height:
+        300px;
+
+    padding:
+        20px;
+
+    margin:
+        20px 0;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        12px;
+
+    background:
+        #050308;
+
+    color:
+        #b99aff;
+
+    font-family:
+        monospace;
+
+    font-size:
+        13px;
+
+    resize:
+        vertical;
+
+}
+
+
+.secondary-button {
+
+    margin:
+        5px;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media
+(max-width: 850px) {
+
+    .archivist-layout {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+```
+
+

@@ -1,0 +1,51 @@
+```json id="g2z8f4"
+[
+    {
+        "id": "CH-001",
+        "name": "Chester Original",
+        "universe": "Tierra-001",
+        "rarity": "Legendario",
+        "status": "Oficial",
+        "image": "imagenes/chester-original.jpg",
+        "description": "El Chester que, según los registros oficiales, dio origen a todo el Chesterverse. Su existencia continúa siendo investigada.",
+        "lore": "Los documentos más antiguos del Chesterverse mencionan a este Chester como el primero registrado. Sin embargo, algunos investigadores sostienen que podría haber existido un Chester anterior.",
+        "date": "2026"
+    },
+
+    {
+        "id": "CH-002",
+        "name": "Chester Supremo",
+        "universe": "Tierra-002",
+        "rarity": "Épico",
+        "status": "Oficial",
+        "image": "imagenes/chester-supremo.jpg",
+        "description": "Una variante extremadamente poderosa. Se dice que posee conocimientos que ningún otro Chester ha logrado comprender.",
+        "lore": "El Chester Supremo apareció por primera vez durante un evento desconocido que alteró temporalmente las leyes de la física.",
+        "date": "2026"
+    },
+
+    {
+        "id": "CH-003",
+        "name": "Chester Oscuro",
+        "universe": "Tierra-013",
+        "rarity": "Raro",
+        "status": "Oficial",
+        "image": "imagenes/chester-oscuro.jpg",
+        "description": "Procedente de una dimensión desconocida. Los documentos sobre este Chester fueron encontrados en circunstancias sospechosas.",
+        "lore": "Se desconoce cómo llegó al Chesterverse principal. Algunos archivos relacionados con él desaparecieron misteriosamente.",
+        "date": "2026"
+    },
+
+    {
+        "id": "CH-004",
+        "name": "Chester Cósmico",
+        "universe": "Tierra-∞",
+        "rarity": "Legendario",
+        "status": "Propuesto",
+        "image": "imagenes/chester-cosmico.jpg",
+        "description": "Un Chester que aparentemente adquirió conciencia de la existencia del multiverso.",
+        "lore": "Esta variante todavía está siendo estudiada por el Archivo Central del Chesterverse.",
+        "date": "2026"
+    }
+]
+```

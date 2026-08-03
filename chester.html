@@ -1,0 +1,316 @@
+```html id="m7q2xk"
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Chester | Chesterverse
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        🐶 CHESTERVERSE
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a
+            href="index.html"
+        >
+
+            ← Volver
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<main>
+
+    <section
+        class="chester-page"
+        id="chester-page"
+    >
+
+        <div class="loading">
+
+            Cargando información...
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<script>
+
+async function cargarFicha() {
+
+    const parametros =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const id =
+        parametros.get(
+            "id"
+        );
+
+
+    const contenedor =
+        document.getElementById(
+            "chester-page"
+        );
+
+
+    if (!id) {
+
+        contenedor.innerHTML = `
+
+            <h1>
+                Chester no especificado
+            </h1>
+
+            <a href="index.html">
+                Volver al archivo
+            </a>
+
+        `;
+
+        return;
+
+    }
+
+
+    try {
+
+        const respuesta =
+            await fetch(
+                "datos/chesters.json"
+            );
+
+
+        const chesters =
+            await respuesta.json();
+
+
+        const chester =
+            chesters.find(
+                item =>
+                    item.id === id
+            );
+
+
+        if (!chester) {
+
+            contenedor.innerHTML = `
+
+                <h1>
+                    Chester no encontrado
+                </h1>
+
+                <p>
+                    La variante
+                    ${id}
+                    no existe en nuestros registros.
+                </p>
+
+                <a href="index.html">
+                    Volver al archivo
+                </a>
+
+            `;
+
+            return;
+
+        }
+
+
+        document.title =
+            `${chester.name} | Chesterverse`;
+
+
+        contenedor.innerHTML = `
+
+            <div class="chester-detail">
+
+                <div class="detail-image">
+
+                    <img
+                        src="${chester.image}"
+                        alt="${chester.name}"
+                    >
+
+                </div>
+
+
+                <div class="detail-content">
+
+                    <span class="chester-id">
+
+                        ${chester.id}
+
+                    </span>
+
+
+                    <span class="status-badge">
+
+                        ${chester.status}
+
+                    </span>
+
+
+                    <h1>
+
+                        ${chester.name}
+
+                    </h1>
+
+
+                    <div class="detail-data">
+
+                        <div>
+
+                            <strong>
+                                Universo
+                            </strong>
+
+                            <span>
+                                ${chester.universe}
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Rareza
+                            </strong>
+
+                            <span>
+                                ${chester.rarity}
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Registro
+                            </strong>
+
+                            <span>
+                                ${chester.date}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <h2>
+                        Descripción
+                    </h2>
+
+
+                    <p>
+
+                        ${chester.description}
+
+                    </p>
+
+
+                    <h2>
+                        Historia
+                    </h2>
+
+
+                    <p>
+
+                        ${chester.lore}
+
+                    </p>
+
+
+                    <a
+                        href="index.html"
+                        class="main-button"
+                    >
+
+                        ← Volver al Chesterverse
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        `;
+
+
+    } catch (error) {
+
+        console.error(
+            error
+        );
+
+
+        contenedor.innerHTML = `
+
+            <h1>
+                Error
+            </h1>
+
+            <p>
+                No se pudo cargar
+                la información.
+            </p>
+
+        `;
+
+    }
+
+}
+
+
+cargarFicha();
+
+</script>
+
+
+</body>
+
+</html>
+```
